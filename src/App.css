@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html,
+body {
+  background-color: #141214;
   color: white;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+scroll-behavior: smooth;
+
 }
 
-.App-link {
-  color: #61dafb;
+a{
+  text-decoration:none ;
+  color: white;
+  font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body::-webkit-scrollbar{display: none;}
+
+
+.header-section {
+  display: flex;
+  background-color: transparent;
+  justify-content: space-between;
+  height: 60px;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1;
+
+}
+
+.bg-grey{
+  background-color: #141214;
+}
+
+.header-left {
+  display: flex;
+
+}
+
+.header-left img {
+  height: 60px;
+  margin: 0px 30px;
+  transition: all 0.5s;
+}
+
+.header-left img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.header-left ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.header-left ul li {
+
+  margin-left: 20px;
+  
+  transition: all 0.2s;
+  font-weight: 500;
+
+}
+
+li:hover {
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+
+/* .header-right */
+
+#search{
+  appearance: none;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+text-align: center;
+position: relative;
+bottom: 27px;
+background-color: transparent;
+border: 0.5px solid rgb(195, 194, 194);
+/* display: none; */
+border-radius: 30px;
+color: white;
+/* z-index: 100; */
+}
+
+
+
+.header-right img {
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 20px;
+  
+
+}
+
+.header-right img:hover {
+  cursor: pointer;
+ 
+}
+
+.header-right svg {
+  height: 50px;
+  margin: 7px 20px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in;
+
+}
+
+.header-right svg:hover {
+  cursor: pointer;
+  color: rgb(231, 85, 85);
+  transform: scale(1.3);
+}
+
+
+
+
+.movieSection{
+  margin: 2rem 2rem ;
+}
+
+.movieCard{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: .75rem;
+  overflow: scroll;
+border: .1rem solid rgb(48, 48, 48);
+}
+.movieCard img{
+  height: 9rem;
+}
+.movieCard::-webkit-scrollbar{
+  display: none;
 }
