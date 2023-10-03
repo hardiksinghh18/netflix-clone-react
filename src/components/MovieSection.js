@@ -1,46 +1,40 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import MovieCard from './MovieCard';
+import { useDataContext } from '../context.js/datacontext';
 const MovieSection = (props) => {
 
     const apikey = "923b0f8d5537d155f732743614ca66a1";
     const apiEndpoint = "https://api.themoviedb.org/3";
     const imgPath = "https://image.tmdb.org/t/p/original";
 
-    const { item } = props
+ const { item } = props
     // console.log(item)
     const fetchMoviesList = `${apiEndpoint}/discover/movie?api_key=${apikey}&with_genres=${item.id}`
 
-    const [movieData, setMovieData] = useState([])
+ const [movieData, setMovieData] = useState([])
     const getCategoryData = async () => {
-        try {
-            const movies = await fetch(fetchMoviesList);
-            const movieList = await movies.json();
-            //   console.log(movieList.results)
-            setMovieData(movieList.results);
-        } catch (error) {
-            console.error("Error fetching categories:", error);
-        }
-    };
-    console.log(movieData)
-    useEffect(() => {
+     try {
+         const movies = await fetch(fetchMoviesList);
+         const movieList = await movies.json();
+         //   console.log(movieList.results)
+         setMovieData(movieList.results);
+     } catch (error) {
+         console.error("Error fetching categories:", error);
+     }
+ };
+ console.log(movieData)
+ useEffect(() => {
         getCategoryData();
-    }, []);
+ }, []);
     return (
         <div className='movieSection'>
             <h3>{item.name}</h3>
-            <div className='movieCard'>
+            <div className='movieCards'>
                 
                   {  movieData.map((movie, index) => (
-                        // <MovieCard key={index} {...movie}/>
-                    <div>
-                        
-                        <img src={`${imgPath}${movie.backdrop_path}`} alt="" />
-                        <div>
-                            <h6>{movie.title}</h6>
-                            <button>View more</button>
-                            </div>
-                     </div>
+                        <MovieCard key={index} movie={movie} imgPath={imgPath}/>
+                    
                         
                     ))}
                 
