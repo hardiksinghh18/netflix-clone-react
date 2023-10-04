@@ -10,7 +10,7 @@ const MovieCard = (props) => {
     <>
       <div className='singleCard'>
 
-        <img src={`${imgPath}${movie.backdrop_path}`} alt="" />
+        <img src={`${imgPath}${movie.backdrop_path}`} alt={movie.title} />
         <div className='movieDesc'>
           <div className='flex-row '>
             <h5>{movie.title}</h5>

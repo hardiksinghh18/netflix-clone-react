@@ -16,7 +16,7 @@ const hideModal=()=>{
 
   return (
     <>
-      <button onClick={displayModal} className='btn'>View more &#8594; </button>
+      <button onClick={displayModal} className='btn'>Watch Now &#8594; </button>
 
       {showModal && <ModalContent hideModal={hideModal} movie={movie}/>}
     </>

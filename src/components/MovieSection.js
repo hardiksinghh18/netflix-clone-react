@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import MovieCard from './MovieCard';
-import { useDataContext } from '../context.js/datacontext';
 const MovieSection = (props) => {
 
     const apikey = "923b0f8d5537d155f732743614ca66a1";
@@ -23,16 +22,18 @@ const MovieSection = (props) => {
          console.error("Error fetching categories:", error);
      }
  };
- console.log(movieData)
+//  console.log(movieData)
+
  useEffect(() => {
         getCategoryData();
  }, []);
     return (
-        <div className='movieSection'>
-            <h3>{item.name}</h3>
+       < >
+         <div className='movieSection'>
+            <h3>{movieData&&item.name}</h3>
             <div className='movieCards'>
                 
-                  {  movieData.map((movie, index) => (
+                  {movieData&&  movieData.map((movie, index) => (
                         <MovieCard key={index} movie={movie} imgPath={imgPath}/>
                     
                         
@@ -40,6 +41,7 @@ const MovieSection = (props) => {
                 
             </div>
         </div>
+       </>
     )
 }
 
