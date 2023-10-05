@@ -9,6 +9,19 @@ import Movie from './Movie';
 import { DataProvider } from './context.js/datacontext';
 
 function App() {
+
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("headernav").style.top = "0";
+      document.getElementById("headernav").style.transition = "all ease .5s";
+    } else {
+      document.getElementById("headernav").style.top 
+      = "-110px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
   return (
     <>
       <DataProvider>

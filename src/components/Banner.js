@@ -1,28 +1,49 @@
-import React, { useEffect, useState } from 'react'
+
+
+
+import React, { useEffect, useState } from 'react';
+import ServiceModal from './ServiceModal';
 
 const Banner = (props) => {
-const{ trendingMovies}=props
-const imgPath = "https://image.tmdb.org/t/p/original";
+  const { trendingMovies } = props;
+  const imgPath = "https://image.tmdb.org/t/p/original";
 
-// const[bannerUrl,setBannerUrl]=useState('')
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
-const randomindex = parseInt(Math.random() * trendingMovies.length)
-randomindex&&(console.log(trendingMovies[randomindex].backdrop_path))
-  // setBannerUrl(trendingMovies[randomindex].backdrop_path)
-// let bannerUrl=trendingMovies[randomindex].backdrop_path
+  useEffect(() => {
+    if (trendingMovies && trendingMovies.length > 0) {
+      const randomIndex = Math.floor(Math.random() * trendingMovies.length);
+      const selectedMovieData = trendingMovies[randomIndex];
 
+      setSelectedMovie(selectedMovieData);
+    }
+  }, [trendingMovies]);
 
-  let banner=document.getElementById("banner")
-
-banner.style.backgroundImage=`url(https://image.tmdb.org/t/p/original${trendingMovies[randomindex].backdrop_path})`;
+  useEffect(() => {
+    if (selectedMovie) {
+      const banner = document.getElementById("banner");
+      banner.style.backgroundImage = `url(${imgPath}${selectedMovie.backdrop_path})`;
+    }
+  }, [selectedMovie]);
 
   return (
-    <div className="banner" id='banner'>
-       <h1>
-        {randomindex &&  trendingMovies[randomindex].title}
-       </h1>
+    <div className="banner .banner-gradient" id='banner'>
+      {selectedMovie && (
+        <div className='bannerText'>
+          <h1>{selectedMovie.title}</h1>
+          <p>{selectedMovie.overview}</p>
+          <div>
+          <div>
+         <ServiceModal movie={selectedMovie}/>
+        </div>
+          </div>
+        </div>
+        
+      )}
     </div>
-  )
+  );
 }
 
-export default Banner
+export default Banner;
+
+

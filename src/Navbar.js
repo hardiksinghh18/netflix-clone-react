@@ -7,8 +7,10 @@ const Navbar = () => {
     <header>
         <div className="header-section" id="headernav">
             <div className="header-left">
+              
                 <a href="index.html"> 
-                    <img  className="mainlogo" src="https://assets.website-files.com/5ee732bebd9839b494ff27cd/5ee732bebd98393d75ff281d_580b57fcd9996e24bc43c529.png"
+                   
+                   <img  className="mainlogo" src="https://assets.website-files.com/5ee732bebd9839b494ff27cd/5ee732bebd98393d75ff281d_580b57fcd9996e24bc43c529.png"
                     alt="Netflix"/></a>
 
                 <ul>

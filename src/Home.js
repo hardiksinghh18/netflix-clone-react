@@ -48,17 +48,17 @@ const[trendingMovies,setTrendingMovies]=useState([])
   useEffect(() => {
     getCategoryData();
     getTrendingMovies();
+   
   }, []);
 
   // console.log(category)
-  
   
  
 
   return (
    <div className='mainSection'>
    <div >
-   <Banner  trendingMovies={trendingMovies} />
+   {trendingMovies&&<Banner  trendingMovies={trendingMovies} />}
    </div>
    <div >
 
