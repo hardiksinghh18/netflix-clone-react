@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Rating } from '@mui/material';
+import { UserAuth } from '../context/AuthContext';
+import { NavLink } from 'react-router-dom';
 
 const ModalContent = (props) => {
 
-
+const{user}=UserAuth()
 
 
     const imgPath = "https://image.tmdb.org/t/p/original";
@@ -45,14 +47,18 @@ const ModalContent = (props) => {
                     <div onClick={hideModal}  ><i className='bx bx-x modalClose' ></i></div>
                     <div className="flex-row mainModalContent">
                         <div className='movieTrailer'>
-                            {/* <img src={`${imgPath}${movie.poster_path}`} alt="" /> */}
-                            <ReactPlayer url={trailerUrl} controls />
+                            
+                            {user?(<ReactPlayer url={trailerUrl} controls />):
+                            (<div>
+                                <p>Please login to watch the trailer</p>
+                                <NavLink to={'/login'}> <button className="subscribe-button">Login</button></NavLink>
+                            </div>)}
                         </div>
                         <div className='movieDetails'>
                             <h3>{movie?.title}</h3><br />
                             <p>{movie.overview}</p>
                             <div className=""><h4>Released :</h4> <p>{movie.release_date}</p></div>
-                            <div className="flex-row"><h4>Rating :</h4>             <Rating name="read-only" value={movie.vote_average / 2
+                            <div className="flex-row"><h4>Rating :</h4><Rating name="read-only" value={movie.vote_average / 2
                             } precision={0.2} size="small" readOnly /> <span>({movie.vote_average / 2})</span></div>
                             <div className=""><h4>Reviews :</h4> <p>{movie.vote_count}</p></div>
 
