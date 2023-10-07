@@ -6,7 +6,7 @@ import Banner from './components/Banner';
 
 
 const Home = () => {
-  
+
   // const apikey = "7543524441a260664a97044b8e2dc621";
   const apikey = "923b0f8d5537d155f732743614ca66a1";
   const apiEndpoint = "https://api.themoviedb.org/3";
@@ -14,8 +14,8 @@ const Home = () => {
   const imgPath = "https://image.tmdb.org/t/p/original";
 
 
-const[category,setCategory]=useState([])
-const[trendingMovies,setTrendingMovies]=useState([])
+  const [category, setCategory] = useState([])
+  const [trendingMovies, setTrendingMovies] = useState([])
 
   const apiPaths = {
     fetchAllCategories: `${apiEndpoint}/genre/movie/list?api_key=${apikey}`,
@@ -48,27 +48,27 @@ const[trendingMovies,setTrendingMovies]=useState([])
   useEffect(() => {
     getCategoryData();
     getTrendingMovies();
-   
+
   }, []);
 
   // console.log(category)
-  
- 
+
+
 
   return (
-   <div className='mainSection'>
-   <div >
-   {trendingMovies&&<Banner  trendingMovies={trendingMovies} />}
-   </div>
-   <div >
+    <div className='mainSection'>
+     
+        {trendingMovies && <Banner trendingMovies={trendingMovies} />}
+     
+      
 
-    <Trending trendingMovies={trendingMovies}/>
-   </div>
-    <div >
-      {category&&category.map((item) => (
-      <MovieSection key={item.id} item={item} />
-      ))}
-    </div></div>
+        <Trending trendingMovies={trendingMovies} />
+    
+      <div >
+        {category && category.map((item) => (
+          <MovieSection key={item.id} item={item} />
+        ))}
+      </div></div>
   );
 };
 
@@ -76,14 +76,7 @@ const[trendingMovies,setTrendingMovies]=useState([])
 
 
 
-  // fetch(apiPaths.fetchAllCategories)
-  // .then(res => res.json())
-  // .then((res) => {
-  //     // console.log(res)
-  //     let categories = res.genres
-  //     console.log(categories)
 
-  // }).catch((err) => console.log(err))
 
- 
+
 export default Home

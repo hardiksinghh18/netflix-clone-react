@@ -22,7 +22,7 @@ const MovieSection = (props) => {
          console.error("Error fetching categories:", error);
      }
  };
- console.log(movieData)
+//  console.log(movieData)
 
  useEffect(() => {
         getCategoryData();

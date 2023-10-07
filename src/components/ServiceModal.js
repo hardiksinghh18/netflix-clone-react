@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ModalContent from './ModalContent'
 
 const ServiceModal = (props) => {
-    const{movie}=props
+    const{movie,title}=props
 const[showModal,setShowModal]=useState(false)
 
 const displayModal=()=>{

@@ -8,17 +8,18 @@ const Navbar = () => {
         <div className="header-section" id="headernav">
             <div className="header-left">
               
-                <a href="index.html"> 
+                <NavLink to={"/"}> 
                    
                    <img  className="mainlogo" src="https://assets.website-files.com/5ee732bebd9839b494ff27cd/5ee732bebd98393d75ff281d_580b57fcd9996e24bc43c529.png"
-                    alt="Netflix"/></a>
+                    alt="Netflix"/></NavLink>
 
                 <ul>
     
                     <NavLink to={"/"}><li>Home</li></NavLink>
+                    <NavLink to={"/movies"}><li>Popular</li></NavLink>
                     <NavLink to={"/shows"}><li>TV Shows</li></NavLink>
-                    <NavLink to={"/movies"}><li>Movies</li></NavLink>
-                    <NavLink to={"/mylist"}><li>My List</li></NavLink>
+                    <NavLink to={"/toprated"}><li>Top Rated</li></NavLink>
+                    <NavLink to={"/upcoming"}><li>Upcoming</li></NavLink>
                    
 
 

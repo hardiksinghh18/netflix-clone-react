@@ -8,7 +8,7 @@ const Trending = (props) => {
   return (
     <div>
       <div className='movieSection'>
-            <h3>Trnding Now</h3>
+            <h3>Trending Now</h3>
             <div className='movieCards'>
                 
                   {trendingMovies&&  trendingMovies.map((movie, index) => (

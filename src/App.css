@@ -168,8 +168,22 @@ color: white;
   transform: scale(1.3);
 }
 
+
+.bannerSection{
+  width: 100%;
+  
+}
+.bannerSection img{
+width: 100%;
+
+
+
+}
+
+
+
 #banner{
-  background-image:linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) url();
+  background-image:linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url();
   height: 100vh;
   background-repeat: no-repeat;
     background-size: cover;
@@ -198,11 +212,12 @@ transition: all ease .5s;
   background-color: #004d84; 
   color: white;
 }
-
-
-.mainSection{
-  /* margin-top: 5rem; */
+.BannerMovieDetail{
+  gap: 1rem;
+  justify-content: flex-start;
 }
+
+
 
 .movieSection{
   margin: 2rem 2rem ;
@@ -347,7 +362,7 @@ gap: .25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30rem;
+  height: 10rem;
   border-radius: 1rem;
 }
 .movieDetails{
@@ -372,7 +387,10 @@ gap: .25rem;
 }
 
 
-
+.mainModalContent{
+align-items: center;
+height: 100%;
+}
 
 
 
@@ -413,4 +431,72 @@ button, a {
 
 .subscribe-button:hover {
   background-color: #004d84; 
+}
+
+
+.shows{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 2rem;
+  width: 100%;
+
+}
+.shows h2{
+  margin: 2rem 4rem;
+
+}
+
+
+.tvShows{
+  display: flex;
+  justify-content: center;
+width: 100%;
+  flex-wrap: wrap;
+}
+
+/* responsive  */
+
+@media only screen and (max-width: 800px){
+  .header-left img {
+    height: 30px;
+    align-items: center;
+  }
+  .header-left {
+  display: flex;
+    align-items: center;
+  }
+  .header-left ul li {
+ font-size: .6rem;
+  }
+	.banner{
+    /* width: 100vw; */
+   font-size: .75rem;
+   height: 80vh!important;
+   background-position: center;
+  }
+	.banner button{
+  
+   font-size: .5rem;
+  }
+  .bannerText{
+    position: absolute;
+    top: 15rem;
+    left: 1rem;
+    max-width: 70vw;
+    text-shadow:0 0 .2rem black;
+  }
+  .movieSection{
+    margin: 2rem 1rem ;
+  }
+  .mainModalContent{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .movieTrailer{
+  
+    
+    width: 90vw;
+   
+  }
 }

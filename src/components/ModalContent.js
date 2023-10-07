@@ -43,7 +43,7 @@ const ModalContent = (props) => {
 
                 <div className="serviceModalContent project">
                     <div onClick={hideModal}  ><i className='bx bx-x modalClose' ></i></div>
-                    <div className="flex-row">
+                    <div className="flex-row mainModalContent">
                         <div className='movieTrailer'>
                             {/* <img src={`${imgPath}${movie.poster_path}`} alt="" /> */}
                             <ReactPlayer url={trailerUrl} controls />

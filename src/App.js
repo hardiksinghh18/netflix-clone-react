@@ -4,9 +4,10 @@ import Home from './Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import TVshows from './TVshows';
-import Mylist from './Mylist';
 import Movie from './Movie';
 import { DataProvider } from './context.js/datacontext';
+import TopRated from './TopRated';
+import Upcoming from './Upcoming';
 
 function App() {
 
@@ -31,10 +32,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Movie />} />
             <Route path="/shows" element={<TVshows />} />
-            <Route path="/mylist" element={<Mylist />} />
+            <Route path="/toprated" element={<TopRated />} />
+            <Route path="/upcoming" element={<Upcoming />} />
           </Routes>
         </BrowserRouter>
-        <Home />
+        
       </DataProvider>
     </>
   );
