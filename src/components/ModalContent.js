@@ -37,7 +37,7 @@ const{user}=UserAuth()
             console.error("Error fetching categories:", error);
         }
     };
-
+console.log(trailerUrl)
 
     return (
         <>
@@ -47,12 +47,12 @@ const{user}=UserAuth()
                     <div onClick={hideModal}  ><i className='bx bx-x modalClose' ></i></div>
                     <div className="flex-row mainModalContent">
                         <div className='movieTrailer'>
-                            
-                            {user?(<ReactPlayer url={trailerUrl} controls />):
+                        <ReactPlayer url={trailerUrl} controls />
+                            {/* {user?(<ReactPlayer url={trailerUrl} controls />):
                             (<div>
                                 <p>Please login to watch the trailer</p>
                                 <NavLink to={'/login'}> <button className="subscribe-button">Login</button></NavLink>
-                            </div>)}
+                            </div>)} */}
                         </div>
                         <div className='movieDetails'>
                             <h3>{movie?.title}</h3><br />

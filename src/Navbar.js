@@ -31,18 +31,20 @@ const navigate = useNavigate()
 
                             <NavLink to={"/"}><li>Home</li></NavLink>
                             <NavLink to={"/movies"}><li>Popular</li></NavLink>
-                            <NavLink to={"/shows"}><li>TV Shows</li></NavLink>
+                            
                             <NavLink to={"/toprated"}><li>Top Rated</li></NavLink>
                             <NavLink to={"/upcoming"}><li>Upcoming</li></NavLink>
 
-
+{user?.email?(                         <NavLink to={"/favorites"}><li>My Favorites</li></NavLink>):''}
 
                         </ul>
                     </div>
                     {user?.email ? (
                         <div className="header-right">
-
-                            <NavLink to={"/account"}><button className='login'>Account</button></NavLink>
+                            <div className='flex-col'>
+                                <p className='username'>Hello</p>
+                                <p className='username'>{user?.email}</p></div>
+                            {/* <NavLink to={"/favorites"}><button className='login'>Favorites</button></NavLink> */}
                             <button onClick={handleLogOut} className='signup'>Log out</button>
                         </div>
                     ) : (

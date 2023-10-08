@@ -12,49 +12,57 @@ body {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 
 }
-.flex-row{
+
+.flex-row {
   display: flex;
   justify-content: center;
-  align-items:center ;
+  align-items: center;
 }
-.flex-col{
+
+.flex-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center ;
+  align-items: center;
 }
 
-.btn{
+.btnwatchnow {
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
   font-size: .75rem;
 }
-.btn:hover{
+
+.btnwatchnow:hover {
   text-shadow: 0 0 .5rem white;
 }
-a{
-  text-decoration:none ;
+
+a {
+  text-decoration: none;
   color: white;
   font-weight: 500;
 }
 
 body::-webkit-scrollbar {
-  width: 5px;               
+  width: 5px;
 }
+
 body::-webkit-scrollbar-track {
-  background:#141214 ;       
+  background: #141214;
 }
+
 body::-webkit-scrollbar-thumb {
-  background-color: white;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
+  background-color: white;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
 
 }
 
@@ -64,16 +72,16 @@ body::-webkit-scrollbar-thumb {
   background-color: transparent;
   justify-content: space-between;
   height: 60px;
-position: fixed;
-top: 0;
-width: 100%;
-z-index: 1;
-padding: 0;
-/* margin-bottom: 5rem; */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 0;
+  /* margin-bottom: 5rem; */
 
 }
 
-.bg-grey{
+.bg-grey {
   background-color: #141214;
 }
 
@@ -97,83 +105,95 @@ padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 
 }
 
 .header-left ul li {
 
   margin-left: 20px;
-  
+
   transition: all 0.2s;
   font-weight: 500;
-  text-shadow:0 0 .2rem black;
+  text-shadow: 0 0 .2rem black;
 }
 
 li:hover {
   color: rgb(255, 0, 0);
   cursor: pointer;
   transform: scale(1.1);
-  text-shadow:0 0 0 ;
+  text-shadow: 0 0 0;
 }
 
-
+.username {
+  margin-left: 20px;
+  font-size: .75rem;
+  transition: all 0.2s;
+  font-weight: 500;
+  text-shadow: 0 0 .2rem black;
+}
 
 /* .header-right */
-.header-right{
+
+
+
+.header-right {
   display: flex;
   align-items: center;
   gap: .75rem;
   margin-right: 3rem;
 }
-.header-right .login{
+
+.header-right .login {
   background-color: transparent;
   color: rgb(255, 255, 255);
-  padding: .2rem .5rem;
+  padding: .4rem .6rem;
   width: fit-content;
   font-weight: 700;
+  text-shadow: 0 0 .2rem black;
   margin: 2rem 0;
   border: .1rem solid red;
   border-radius: .3rem;
   font-size: 1rem;
   transition: all ease .5s;
 }
-.header-right .login:hover{
+
+.header-right .login:hover {
   background-color: red;
   color: rgb(255, 255, 255);
 }
-.header-right .signup{
+
+.header-right .signup {
   background-color: red;
   color: rgb(255, 255, 255);
-  padding: .2rem .5rem;
+  padding: .4rem .6rem;
   width: fit-content;
   font-weight: 700;
   margin: 2rem 0;
+  text-shadow: 0 0 .2rem black;
   border: .1rem solid red;
   border-radius: .3rem;
   font-size: 1rem;
   transition: all ease .5s;
 }
-.header-right .signup:hover{
+
+.header-right .signup:hover {
   background-color: transparent;
   color: rgb(255, 255, 255);
 }
 
 
-
-
-
-
-
-
-
-.bannerSection{
+.bannerSection {
   width: 100%;
-  
-  
+
+
 }
-.bannerSection img{
-width: 100%;
+
+.bannerSection img {
+  width: 100%;
+  height: 120vh;
+  object-fit: cover;
+
 
 }
 
@@ -188,134 +208,159 @@ width: 100%;
 
 } */
 
-.bannerText{
+.bannerTextBox {
+  position: absolute;
+  top: 0;
+  width: 99vw;
+  height: 120vh;
+  /* background-color: black; */
+  background: linear-gradient(to right, black, transparent);
+}
+
+.bannerText {
   display: flex;
   flex-direction: column;
   gap: .5rem;
   position: absolute;
-  top: 15rem;
+  top: 10rem;
   left: 5rem;
   max-width: 50vw;
-  
-  text-shadow:0 0 .2rem black;
+
+  text-shadow: 0 0 .2rem black;
 }
-.bannerText h1{
+
+.bannerText h1 {
   font-size: 3rem;
 }
-.banner button{
-background-color: white;
-color: black;
-padding: .75rem;
-width: fit-content;
-font-weight: 700;
-margin: 2rem 0;
-border: .1rem solid rgb(119, 119, 119);
-border-radius: .3rem;
-font-size: 1rem;
-transition: all ease .5s;
+
+.bannerText button {
+  background-color: white;
+  color: black;
+  padding: .75rem;
+  width: fit-content;
+  font-weight: 700;
+  margin: 2rem 0;
+  border: solid .1rem transparent;
+  border-radius: .3rem;
+  font-size: 1rem;
+  transition: all ease .3s;
 }
-.banner button:hover{
-  background-color: transparent; 
+
+.bannerText button:hover {
+  background-color: transparent;
   color: white;
-  border: solid .1rem white;
+  border: solid .1rem rgb(187, 187, 187);
 }
-.BannerMovieDetail{
+
+.BannerMovieDetail {
   gap: 1rem;
   justify-content: flex-start;
 }
 
 
 
-.movieSection{
-  margin: 2rem 2rem ;
+.movieSection {
+  margin: 2rem 2rem;
 }
-.movieSection h3{
+
+.movieSection h3 {
   margin: 1rem 0;
 }
 
-.movieCards{
+.movieCards {
   display: flex;
   /* justify-content: center; */
   align-items: center;
   gap: .75rem;
   overflow-x: scroll;
   /* overflow-y: visible; */
-  
+
 
 }
-.movieCards img{
+
+.movieCards img {
   height: 9rem;
 }
-.movieCards::-webkit-scrollbar{
+
+.movieCards::-webkit-scrollbar {
   display: none;
 }
 
 
-.singleCard{
+.singleCard {
   border: .1rem solid rgb(48, 48, 48);
   border-radius: .5rem;
   padding: .75rem;
   /* max-height: 13rem; */
-  
-transition: all .5s ease;
-width: 20rem;
+
+  transition: all .5s ease;
+  max-width: 20rem;
 
 }
-.singleCard:hover{
-box-shadow: 0 0 1rem rgb(48,48,48);
+
+.singleCard:hover {
+  box-shadow: 0 0 1rem rgb(48, 48, 48);
   cursor: pointer;
 }
 
-.movieDesc{
+.movieDesc {
   display: flex;
   flex-direction: column;
   width: 100%;
-margin: .75rem 0;
+  margin: .75rem 0;
   justify-content: center;
   align-items: flex-start;
-gap: .25rem;
+  gap: .25rem;
 
 }
-.movieRating{
+
+.movieRating {
 
   justify-content: space-between;
 }
 
+.singleCard .movieTitle {
+  width: 100%;
+  justify-content: space-between;
+
+}
 
 
-
-.rating{
+.rating {
   justify-content: space-between;
   width: 100%;
   font-size: .75rem;
 }
- 
-.rating Rating{
+
+.rating Rating {
 
   font-size: .75rem;
 }
- 
+
 
 
 .projectDetailModal .desc {
   font-size: 1.3rem;
   margin: 2rem 0;
 }
+
 .projectDetailModal a {
   font-size: 2.5rem;
   display: flex;
   align-items: center;
   color: var(--text-color);
 }
+
 .projectDetailModal a:hover {
- text-shadow: o o .5rem var(--main-color);
+  text-shadow: o o .5rem var(--main-color);
 }
 
 .modalHeading {
   margin: 3rem 0 0 0;
   text-align: center;
-  
+
 }
+
 .services__modal {
 
 
@@ -337,11 +382,11 @@ gap: .25rem;
   width: 70rem;
   height: 30rem;
   border-radius: 1.5rem;
-  background-color: #2a2a2a;
+  background-color: #252525;
   color: var(--text-color);
   box-shadow: 0rem 0rem 1rem black;
   border-radius: 2rem;
-  
+
 
   padding: 2rem;
 
@@ -356,50 +401,56 @@ gap: .25rem;
   flex-direction: column;
   padding: 2.5rem;
 
-} 
-.modalClose{
+}
+
+.modalClose {
   position: absolute;
   top: 1rem;
   right: 2rem;
- font-size: 2rem;
+  font-size: 2rem;
 }
+
 .serviceModalContent h3 {
   font-size: 2rem;
 }
 
 
-.movieTrailer{
+.movieTrailer {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 10rem;
   border-radius: 1rem;
 }
-.movieDetails{
+
+.movieDetails {
   margin: 0 5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.movieDetails h3{
- text-shadow: 0 0 .5rem white;
- 
+
+.movieDetails h3 {
+  text-shadow: 0 0 .5rem white;
+
 }
-.movieDetails div{
- display: flex;
- justify-content: flex-start;
- align-items: center;
- font-size: 1rem;
- gap: .3rem;
+
+.movieDetails div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  gap: .3rem;
 }
-.movieDetails h3{
+
+.movieDetails h3 {
   margin: 0;
 }
 
 
-.mainModalContent{
-align-items: center;
-height: 100%;
+.mainModalContent {
+  align-items: center;
+  height: 100%;
 }
 
 
@@ -407,7 +458,8 @@ height: 100%;
 
 
 /* Reset default styles for the button */
-button, a {
+button,
+a {
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -422,7 +474,7 @@ button, a {
 /* Style the button container */
 .button-container {
   text-align: center;
-  margin:1rem 0;
+  margin: 1rem 0;
 }
 
 /* Style the subscribe button */
@@ -430,7 +482,8 @@ button, a {
   display: inline-block;
   padding: 15px 30px;
   /* background-color: #E50914; Netflix red color */
-  background-color: #129cff;  /* Netflix red color*/
+  background-color: #129cff;
+  /* Netflix red color*/
   color: #fff;
   font-size: 18px;
   font-weight: bold;
@@ -440,11 +493,11 @@ button, a {
 }
 
 .subscribe-button:hover {
-  background-color: #004d84; 
+  background-color: #004d84;
 }
 
 
-.shows{
+.shows {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -452,42 +505,50 @@ button, a {
   width: 100%;
 
 }
-.shows h2{
+
+.shows h2 {
   margin: 2rem 4rem;
 
 }
 
 
-.tvShows{
+.tvShows {
   display: flex;
   justify-content: center;
-width: 100%;
+  width: 100%;
   flex-wrap: wrap;
 }
 
 /* signup  */
 
-.signup_page{
+.signup_page {
   width: 100vw;
   height: 100vh;
   background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/893a42ad-6a39-43c2-bbc1-a951ec64ed6d/1d86e0ac-428c-4dfa-9810-5251dbf446f8/IN-en-20231002-popsignuptwoweeks-perspective_alpha_website_large.jpg);
-opacity: .7;
-display: flex;
-justify-content: center;
-align-items: center;
+  opacity: .7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .7;
 }
-.signupSection{
- 
-  background-color: black;
-  /* opacity: .75; */
+
+
+.signupSection {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: .9;
 }
 
 /* signup box  */
 .signup-box {
   max-width: 250px;
   margin: 0 auto;
-  padding: 2.5rem ;
-  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2.5rem;
+
+
   border-radius: 5px;
   color: #fff;
   text-align: center;
@@ -495,18 +556,20 @@ align-items: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
-  
+
+
 }
 
 h1 {
   font-size: 28px;
   margin-bottom: 20px;
 }
-.errormsg{
+
+.errormsg {
   color: rgb(255, 85, 85);
   margin: 1rem;
 }
+
 input {
   width: 90%;
   padding: 10px;
@@ -518,7 +581,7 @@ input {
   color: white;
 }
 
-button {
+.signup-box button {
   width: 90%;
   padding: 12px;
   background-color: #e50914;
@@ -529,7 +592,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.signup-box button:hover {
   background-color: #d30812;
 }
 
@@ -549,51 +612,173 @@ a {
 }
 
 
+.favouritePage .movieCards {
+  width: 95vw;
+  overflow-x: hidden;
+}
+
+.favouritePage .deleteIcon {
+  color: red;
+  margin-right: 1rem;
+}
+
+.favoritePageImage {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 60vh;
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/893a42ad-6a39-43c2-bbc1-a951ec64ed6d/1d86e0ac-428c-4dfa-9810-5251dbf446f8/IN-en-20231002-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+  opacity: .8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  overflow-x: hidden;
+
+}
+
+/* .favoritesText{
+  color: white;
+  
+  position: fixed;
+  top: 23%;
+  left: 37%;
+ 
+} */
+.favoritesText h1 {
+  font-size: 3rem;
+}
+
+
+/* footer  */
+
+.netflix-footer {
+  background-color: #111111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  padding: 2rem 2rem;
+  margin: 5rem 0 0 0;
+}
+
+.footer-logo img {
+  width: 100px;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.footer-links li,
+.footer-social li {
+  margin-right: 20px;
+}
+
+.footer-links a,
+.footer-social a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+}
 
 
 
 /* responsive  */
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 800px) {
   .header-left img {
     height: 30px;
     align-items: center;
   }
+
   .header-left {
-  display: flex;
+    display: flex;
     align-items: center;
   }
+
   .header-left ul li {
- font-size: .6rem;
+    font-size: .6rem;
   }
-	.banner{
+
+  .banner {
     /* width: 100vw; */
-   font-size: .75rem;
-   height: 80vh!important;
-   background-position: center;
+    font-size: .75rem;
+    /* height: 80vh !important; */
+    background-position: center;
   }
-	.banner button{
-  
-   font-size: .5rem;
+
+  .bannerSection img {
+ height: 70vh;
+
   }
-  .bannerText{
+
+
+  .bannerTextBox {
+height: 70vh;
+ }
+  .bannerText {
     position: absolute;
-    top: 15rem;
+    top: 5rem;
     left: 1rem;
     max-width: 70vw;
-    text-shadow:0 0 .2rem black;
+    text-shadow: 0 0 .2rem black;
+    font-size: .75rem;
   }
-  .movieSection{
-    margin: 2rem 1rem ;
+  .bannerText button{
+    font-size: .8rem;
+    padding: .5rem;
   }
-  .mainModalContent{
+  .bannerText h1 {
+    font-size: 2rem;
+  }
+
+  .movieSection {
+    margin: 1.5rem;
+  }
+
+  .mainModalContent {
     flex-direction: column;
     justify-content: center;
   }
-  .movieTrailer{
-  
-    
+
+  .movieTrailer {
+
+
     width: 90vw;
-   
+
+  }
+
+  .singleCard {
+    
+    padding: .55rem;
+   transition: all .5s ease;
+    max-width: 10rem;
+  
+  }
+  .movieCards img {
+    height: 5.5rem;
+    width: 100%;
+  }
+  .movieDesc{
+    padding: 0 .15rem;
+    
+  }
+  .rating{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hearticon{
+    margin-right:.75rem ;
   }
 }
