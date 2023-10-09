@@ -19,7 +19,7 @@ const TopRated = () => {
         })
     }, [])
 
-    console.log(topRated)
+    // console.log(topRated)
     return (
         <>
             <div className='shows'>

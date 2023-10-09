@@ -8,18 +8,18 @@ const Upcoming = () => {
     const upcomingUrl = 'https://api.themoviedb.org/3/movie/upcoming?api_key=923b0f8d5537d155f732743614ca66a1'
     const imgPath = "https://image.tmdb.org/t/p/original";
 
-    const [upcoming, setUpcomng] = useState([])
+    const [upcoming, setUpcoming] = useState([])
 
 
     useEffect(() => {
         axios.get(upcomingUrl).then(res => {
-            setUpcomng((res.data.results))
+            setUpcoming((res.data.results))
 
 
         })
     }, [])
 
-    console.log(setUpcomng)
+    // console.log(upcoming)
     return (
         <>
             <div className='shows'>

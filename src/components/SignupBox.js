@@ -15,7 +15,8 @@ const navigate=useNavigate()
         
         
         if (email && password) {
-            try {
+            try { 
+      
                 await signUp(email, password);
                 console.log('clicked')
                 navigate("/")
@@ -60,6 +61,7 @@ const navigate=useNavigate()
                     Already have an account? <NavLink to={"/login"}>Sign In</NavLink>
                 </div>
             </form>
+     
         </div>
     );
 };

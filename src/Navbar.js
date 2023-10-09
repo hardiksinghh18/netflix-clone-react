@@ -1,19 +1,32 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { UserAuth } from './context/AuthContext'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 const Navbar = () => {
+    const [showNav, setShowNav] = useState(false)
+
+    const showNavBar = () => {
+        setShowNav(true)
+
+    }
+    const hideNavBar = () => {
+        setShowNav(false)
+    }
+
 
     const { user, logOut } = UserAuth()
-const navigate = useNavigate()
+    const navigate = useNavigate()
     const handleLogOut = async () => {
         try {
             await logOut()
-           navigate("/")
+            navigate("/")
         } catch (error) {
             console.log(error)
         }
     }
-// console.log(user.email)
+    // console.log(user.email)
+
+
 
     return (
         <>
@@ -25,17 +38,20 @@ const navigate = useNavigate()
                         <NavLink to={"/"}>
 
                             <img className="mainlogo" src="https://assets.website-files.com/5ee732bebd9839b494ff27cd/5ee732bebd98393d75ff281d_580b57fcd9996e24bc43c529.png"
-                                alt="Netflix" /></NavLink>
+                                alt="Netflix" />
+                        </NavLink>
+                        {!showNav&&   <i className='bx bx-menu menu-box' onClick={showNavBar}></i>}
+                        {showNav&& <i className='bx bx-x crossBar' onClick={hideNavBar}></i>}
 
-                        <ul>
+                        <ul  className={showNav?"navbar navbarActive":"navbar"} onClick={()=>setShowNav(false)}>
 
                             <NavLink to={"/"}><li>Home</li></NavLink>
                             <NavLink to={"/movies"}><li>Popular</li></NavLink>
-                            
+
                             <NavLink to={"/toprated"}><li>Top Rated</li></NavLink>
                             <NavLink to={"/upcoming"}><li>Upcoming</li></NavLink>
 
-{user?.email?(                         <NavLink to={"/favorites"}><li>My Favorites</li></NavLink>):''}
+                            {user?.email ? (<NavLink to={"/favorites"}><li>My Favorites</li></NavLink>) : ''}
 
                         </ul>
                     </div>

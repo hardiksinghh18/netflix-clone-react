@@ -5,8 +5,9 @@ import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
 // import MovieCard from './MovieCard'
 import { Rating } from '@mui/material'
 import ServiceModal from './ServiceModal'
-import { AiOutlineClose } from 'react-icons/ai'
 import { AiFillDelete } from 'react-icons/ai'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SavedShows = () => {
     const { user } = UserAuth()
@@ -23,7 +24,8 @@ const SavedShows = () => {
 
 const movieRef = doc(db,'users',`${user?.email}`)
 const deleteShow = async (passedId) =>{
-    try {
+    try {  toast('Movie deleted from favourites !');
+     
         const result = movie.filter((item)=> item.id!=passedId)
         await updateDoc(movieRef,{
             savedshows:result
@@ -59,6 +61,19 @@ const deleteShow = async (passedId) =>{
                 ))}
 
             </div>
+            <ToastContainer
+                backgroundColor="#333"
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     )
 }

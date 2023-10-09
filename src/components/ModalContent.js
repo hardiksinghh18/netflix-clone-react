@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Rating } from '@mui/material';
-import { UserAuth } from '../context/AuthContext';
-import { NavLink } from 'react-router-dom';
+
 
 const ModalContent = (props) => {
 
-const{user}=UserAuth()
 
 
-    const imgPath = "https://image.tmdb.org/t/p/original";
+
+    // const imgPath = "https://image.tmdb.org/t/p/original";
     const { movie, hideModal } = props
 
     // console.log(movie)
@@ -37,7 +36,7 @@ const{user}=UserAuth()
             console.error("Error fetching categories:", error);
         }
     };
-console.log(trailerUrl)
+// console.log(trailerUrl)
 
     return (
         <>
@@ -47,15 +46,11 @@ console.log(trailerUrl)
                     <div onClick={hideModal}  ><i className='bx bx-x modalClose' ></i></div>
                     <div className="flex-row mainModalContent">
                         <div className='movieTrailer'>
-                        <ReactPlayer url={trailerUrl} controls />
-                            {/* {user?(<ReactPlayer url={trailerUrl} controls />):
-                            (<div>
-                                <p>Please login to watch the trailer</p>
-                                <NavLink to={'/login'}> <button className="subscribe-button">Login</button></NavLink>
-                            </div>)} */}
+                        <ReactPlayer url={trailerUrl} controls height='100%'/>
+                           
                         </div>
                         <div className='movieDetails'>
-                            <h3>{movie?.title}</h3><br />
+                            <h3>{movie?.title}</h3>
                             <p>{movie.overview}</p>
                             <div className=""><h4>Released :</h4> <p>{movie.release_date}</p></div>
                             <div className="flex-row"><h4>Rating :</h4><Rating name="read-only" value={movie.vote_average / 2

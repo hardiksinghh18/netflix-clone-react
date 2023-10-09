@@ -5,6 +5,8 @@ import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MovieCard = (props) => {
   const imgPath = "https://image.tmdb.org/t/p/original";
@@ -19,6 +21,7 @@ const MovieCard = (props) => {
 
   const saveShow = async () => {
     if (user?.email) {
+      toast('Movie added to favourites !');
       setLike(!like)
       setSaved(true)
       await updateDoc(movieId, {
@@ -64,6 +67,19 @@ const MovieCard = (props) => {
           </div>
         </div>
       </div>
+      <ToastContainer
+                backgroundColor="#333"
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
     </>
   )
 }

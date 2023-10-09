@@ -17,7 +17,7 @@ const Movie = () => {
     })
   },[])
 
-  console.log(popular)
+  // console.log(popular)
   return (
     <div className='shows'>
     <h2>Popular Movies</h2>
